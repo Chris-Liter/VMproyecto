@@ -8,7 +8,7 @@ import { Autos } from '../menu/Autos';
 export class AutoServicioService {
 
 
-  private apiUrl = 'http://34.171.31.18:3000'; // URL de tu servidor Node.js
+  private apiUrl = 'http://34.132.235.146:3000'; // URL de tu servidor Node.js
 
   constructor(private http: HttpClient) {}
 

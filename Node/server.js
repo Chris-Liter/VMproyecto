@@ -7,7 +7,7 @@ const http = require('http').createServer(app);
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://34.171.31.18:4200',
+    origin: 'http://34.132.235.146:4200',
     methods: 'GET,POST,PUT,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization'
 }));
@@ -15,7 +15,7 @@ app.use(cors({
 // Definir una ruta que redirija las solicitudes a la API WildFly
 
 app.get('/list', async (req, res) => {
-    const apiUrl = 'http://34.19.97.196:8080/autos/rest/autos' + req.url;
+    const apiUrl = 'http://10.138.0.2:8080/autos/rest/autos' + req.url;
     try {
       const response = await axios({
         method: req.method,
@@ -35,7 +35,7 @@ app.get('/list', async (req, res) => {
   app.get('/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const response = await axios.get(`http://34.19.97.196:8080/autos/rest/autos/${id}`);
+        const response = await axios.get(`http://10.138.0.2:8080/autos/rest/autos/${id}`);
         res.status(response.status).send(response.data);
     } catch (error) {
         if (error.response) {
@@ -48,7 +48,7 @@ app.get('/list', async (req, res) => {
   
   app.post('/', async (req, res) => {
     try {
-        const response = await axios.post('http://34.19.97.196:8080/autos/rest/autos', req.body);
+        const response = await axios.post('http://10.138.0.2:8080/autos/rest/autos', req.body);
         res.status(response.status).send(response.data);
     } catch (error) {
         if (error.response) {
@@ -61,7 +61,7 @@ app.get('/list', async (req, res) => {
 
 app.put('/', async (req, res) => {
     try {
-        const response = await axios.put('http://34.19.97.196:8080/autos/rest/autos', req.body);
+        const response = await axios.put('http://10.138.0.2:8080/autos/rest/autos', req.body);
         res.status(response.status).send(response.data);
     } catch (error) {
         if (error.response) {
@@ -76,7 +76,7 @@ app.put('/', async (req, res) => {
 app.delete('/', async (req, res) => {
     try {
         const codigo = req.query.id;
-        const response = await axios.delete(`http://34.19.97.196:8080/autos/rest/autos?id=${codigo}`);
+        const response = await axios.delete(`http://10.138.0.2:8080/autos/rest/autos?id=${codigo}`);
         res.status(response.status).send(response.data);
     } catch (error) {
         if (error.response) {
