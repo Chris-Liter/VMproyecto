@@ -1,0 +1,51 @@
+<div class="autos-container">
+  
+
+  <div class="autos-form">
+    <h1>{{ codigos ? 'Editar Auto' : 'Agregar Auto' }}</h1>
+    <form [formGroup]="autoForm">
+      <div class="form-group">
+        <label for="marca">Marca</label>
+        <input id="marca" [(ngModel)]="auto.marca" formControlName="marca" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="color">Color</label>
+        <input id="color" [(ngModel)]="auto.color" formControlName="color" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="placa">Placa</label>
+        <input id="placa" [(ngModel)]="auto.placa" formControlName="placa" type="text">
+      </div>
+
+      <div class="buttons">
+        <button type="button" (click)="add()">Agregar</button>
+        <button type="button" (click)="update()">Modificar</button>
+      </div>
+    </form>
+  </div>
+  <div class="autos-list">
+    <h1>Lista de Autos</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Marca</th>
+          <th>Color</th>
+          <th>Placa</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let auto of autos" (click)="selected(auto.codigo)">
+          <td>{{ auto.marca }}</td>
+          <td>{{ auto.color }}</td>
+          <td>{{ auto.placa }}</td>
+          <td>
+            <button (click)="deleteAuto(auto.codigo)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

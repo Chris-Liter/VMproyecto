@@ -1,0 +1,67 @@
+.autos-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.autos-list {
+  width: 48%; /* Reducimos el ancho para dar espacio al formulario */
+}
+
+.autos-form {
+  width: 48%; /* Reducimos el ancho para dar espacio al listado */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #f4f4f4;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: calc(100% - 20px); /* Calculamos el ancho menos el padding para ajustar al contenedor */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
