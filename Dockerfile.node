@@ -1,0 +1,18 @@
+FROM node:latest
+# Cambié a node:16-alpine para tener una versión específica
+
+RUN mkdir -p /application
+WORKDIR /application
+RUN npm install axios
+
+# Copia el código fuente del servidor Node.js
+COPY ./Node /application/Node
+
+# Instala las dependencias necesarias para el servidor Node.js
+RUN npm install --prefix /application/Node
+
+# Expone el puerto del servidor Node.js.
+EXPOSE 3000
+
+# Comando para iniciar el servidor Node.js
+CMD ["node", "./Node/server.js"]

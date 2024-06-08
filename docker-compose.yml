@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  node:
+    image: chrisliter/node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Node:/application/Node
+
+
+  angular:
+    image: chrisliter/clientesinnode
+    ports:
+      - "4200:80"
+    volumes:
+      - ./Cliente:/app
+    depends_on:
+      - node

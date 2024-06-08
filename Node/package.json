@@ -1,9 +1,9 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -11,7 +11,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "http-proxy": "^1.18.1"
+    "http-proxy": "^1.18.1",
+    "axios": "^0.21.1"
   },
   "devDependencies": {},
   "description": ""

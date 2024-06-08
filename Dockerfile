@@ -16,20 +16,3 @@ FROM nginx:1.17.1-alpine
 COPY --from=build /app/dist/Cliente /usr/share/nginx/html
 
 # Etapa para el servidor Node.js
-FROM node:latest
-
-WORKDIR /application
-#oghyufifoeeoseghesripughnersuorprghespurgdfvn
-
-# Copia el código fuente del servidor Node.js
-COPY ./Node /application/Node
-
-# Instala las dependencias necesarias para el servidor Node.js
-RUN npm install --prefix /application/Node \
-    && npm install socket.io --prefix /application/Node
-# Expone el puerto del servidor Node.js
-EXPOSE 3000
-
-# Comando para iniciar el servidor Node.js
-CMD ["node", "/application/Node/server.js"]
- 

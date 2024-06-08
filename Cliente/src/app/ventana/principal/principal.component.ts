@@ -51,8 +51,10 @@ export class PrincipalComponent implements OnInit{
   deleteAuto(codigo: number | undefined): void {
     this.autosService.deleteAuto(codigo).subscribe(data => {
       this.loadAutos();
+      
       console.log(data)
     });
+    location.reload()
   }
 
   add(): void {
